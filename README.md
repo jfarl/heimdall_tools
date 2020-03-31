@@ -4,31 +4,50 @@
 
 ![Heimdall Tools Build](https://github.com/mitre/heimdall_tools/workflows/Build%20and%20run%20heimdall_tools/badge.svg)
 
-HeimdallTools supplies several methods to convert output from various tools to "Heimdall Data Format"(HDF) format to be viewable in Heimdall. The converters in version 1.1.1 are from:
+HeimdallTools supplies several methods to convert output from various tools to "Heimdall Data Format"(HDF) format to be viewable in Heimdall. The current converters are:
 
 * __sonarqube_mapper__ - open-source static code analysis tool
 * __fortify_mapper__ - commercial static code analysis tool
 * __zap_mapper__ - OWASP ZAP - open-source dynamic code analysis tool
 
-# Installation
+# Prerequisites
 
-Add this line to your application's Gemfile:
+Ruby 2.4 or higher  (check using "ruby -v")
 
-```
-gem 'heimdall_tools', :git => "https://github.com/mitre/heimdall_tools"
-```
+If installation of Ruby is required, perform these steps:
 
-And then execute:
+## Linux Installation of Ruby
 
-```
-    $ bundle
-```
+### Installation on RHEL-based systems
 
-Clone the repo and install it yourself as:
+To install Ruby using RVM (Ruby Version Manager):
 
-```
-    $ gem install heimdall_tools
-```
+`sudo yum install curl gpg gcc gcc-c++ make patch autoconf automake bison libffi-devel libtool patch readline-devel sqlite-devel zlib-devel openssl-devel`
+
+`sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB`
+
+`curl -sSL https://get.rvm.io | bash -s stable`
+
+`source ~/.rvm/scripts/rvm`
+
+Finally, install the latest version of Ruby (stable), currently 2.6.x:
+
+`rvm install 2.6`
+`rvm use 2.6 --default`
+
+Verify the installed version number:
+
+`ruby -v`
+`ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux]`
+
+### Installation on Ubuntu-based systems
+
+<https://github.com/rvm/ubuntu_rvm>
+
+# Installation of Heimdall Tools:
+
+`gem install heimdall_tools`
+
 
 ## Command line Usage
 
